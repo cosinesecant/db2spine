@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="compile">
+	<property environment="env"/>
+	<property name="closure_compiler" value="${env.CLOSURE_COMPILER_HOME}"/>
+	
+	<taskdef name="jscomp" classname="com.google.javascript.jscomp.ant.CompileTask"
+           classpath="${closure_compiler}/closure-compiler.jar"/>
+           
+    <path id="db2spine.files">
+    	<fileset dir="${basedir}/src">
+    		<include name="*.js"/>
+    	</fileset>
+    </path>
+    
+    <target name="compile">
+    	<jscomp compilationLevel="simple" warning="verbose" 
+        	debug="false" output="${basedir}/db2spine.js">
+       	<!-- <path refid="db2spine.files" /> -->
+       		<sources dir="${basedir}/src">
+       			<file name="main.js" />
+       			<file name="converter.js" />
+       		</sources>
+        </jscomp>
+    </target>
+    
+    <target name="compile-min">
+    	<jscomp compilationLevel="simple" warning="verbose" 
+        	debug="false" output="${basedir}/db2spine-min.js">
+       	<path refid="db2spine.files" />
+        </jscomp>
+    </target>
+	
+</project>
