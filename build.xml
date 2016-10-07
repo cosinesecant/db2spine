@@ -18,6 +18,7 @@
        	<!-- <path refid="db2spine.files" /> -->
        		<sources dir="${basedir}/src">
        			<file name="main.js" />
+       			<file name="dataFormat/checkFormat.js" />
        			<file name="converter.js" />
        		</sources>
         </jscomp>

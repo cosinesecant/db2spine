@@ -1,13 +1,15 @@
 /** @suppress{duplicate} */
 var _db2spineImpl = _db2spineImpl || {};
 
-db2spine = (function(nm){
+_db2spineImpl = (function(nm){
     /**
      * @constructor
      */
-    nm._convertor = function() {
+    nm.Convertor = function() {
         this.convert = function(srcJSON) {
-            var obj = JSON.parse(srcJSON);
+            var dbObj = JSON.parse(srcJSON);
+            nm.dataFormat.checkFormat(dbObj);
+            
             return srcJSON;
         };
     };

@@ -1,1 +1,1 @@
-var db2spine=db2spine||{},db2spine=function(a){a.convert=function(a){return(new db2spine._convertor).convert(a)};return a}(db2spine);db2spine=db2spine||{};db2spine=function(a){a._convertor=function(){this.convert=function(a){return a}};return a}(db2spine);
+var db2spine={convert:function(a){return(new _db2spineImpl._convertor).convert(a)}};var _db2spineImpl=_db2spineImpl||{},db2spine=function(a){a._convertor=function(){this.convert=function(a){JSON.parse(a);return a}};return a}(_db2spineImpl);
